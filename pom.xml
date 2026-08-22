@@ -8,11 +8,11 @@
         <version>4.1.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ar.edu.utn.ddsi</groupId>
-    <artifactId>mcp-billetera</artifactId>
+    <groupId>ar.edu.unsam.ddso</groupId>
+    <artifactId>billetera</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mcp-billetera</name>
-    <description>mcp-billetera</description>
+    <name>billetera</name>
+    <description>billetera</description>
     <url/>
     <licenses>
         <license/>
@@ -31,23 +31,7 @@
         <spring-ai.version>2.0.0</spring-ai.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.ai</groupId>
-                <artifactId>spring-ai-bom</artifactId>
-                <version>${spring-ai.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-mcp-server-webmvc</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-h2console</artifactId>
