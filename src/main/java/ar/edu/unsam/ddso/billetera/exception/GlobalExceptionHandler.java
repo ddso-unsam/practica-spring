@@ -11,7 +11,8 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(CuentaNoEncontradaException.class)
-    public ResponseEntity<Map<String, String>> handleCuentaNoEncontrada(CuentaNoEncontradaException ex) {
+    public ResponseEntity<Map<String, String>> handleCuentaNoEncontrada(
+            CuentaNoEncontradaException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
     }
 }

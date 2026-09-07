@@ -9,5 +9,4 @@ public class BilleteraApplication {
     public static void main(String[] args) {
         SpringApplication.run(BilleteraApplication.class, args);
     }
-
 }

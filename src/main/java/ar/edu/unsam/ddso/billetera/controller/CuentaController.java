@@ -3,7 +3,12 @@ package ar.edu.unsam.ddso.billetera.controller;
 import ar.edu.unsam.ddso.billetera.dto.MovimientoResponse;
 import ar.edu.unsam.ddso.billetera.dto.SaldoResponse;
 import ar.edu.unsam.ddso.billetera.service.CuentaService;
-import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -23,8 +28,8 @@ public class CuentaController {
     }
 
     @GetMapping("/{alias}/movimientos")
-    public List<MovimientoResponse> movimientos(@PathVariable String alias,
-                                                @RequestParam(defaultValue = "10") int limite) {
+    public List<MovimientoResponse> movimientos(
+            @PathVariable String alias, @RequestParam(defaultValue = "10") int limite) {
         return cuentaService.listarMovimientos(alias, limite);
     }
 }

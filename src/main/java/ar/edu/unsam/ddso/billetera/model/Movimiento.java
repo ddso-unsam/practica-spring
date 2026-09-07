@@ -1,7 +1,16 @@
 package ar.edu.unsam.ddso.billetera.model;
 
 import ar.edu.unsam.ddso.billetera.model.enums.TipoMovimiento;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +31,7 @@ public class Movimiento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "cuenta_origen_id") //null si es un deposito
+    @Column(name = "cuenta_origen_id") // null si es un deposito
     private Long cuentaOrigenId;
 
     @Column(name = "cuenta_destino_id", nullable = false)
@@ -39,5 +48,4 @@ public class Movimiento {
     private LocalDateTime fecha;
 
     private String descripcion;
-
 }
