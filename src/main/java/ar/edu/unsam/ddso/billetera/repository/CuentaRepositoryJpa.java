@@ -10,4 +10,9 @@ import java.util.Optional;
 @Profile({"local", "prod"})
 public interface CuentaRepositoryJpa extends CuentaRepository, JpaRepository<Cuenta, Long> {
     Optional<Cuenta> findByAlias(String alias);
+
+    @Override
+    default Cuenta guardar(Cuenta cuenta) {
+        return save(cuenta);
+    }
 }

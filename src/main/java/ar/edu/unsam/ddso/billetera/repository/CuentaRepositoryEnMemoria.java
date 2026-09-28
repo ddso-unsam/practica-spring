@@ -17,10 +17,10 @@ public class CuentaRepositoryEnMemoria implements CuentaRepository {
     private final Map<String, Cuenta> cuentasPorAlias = new ConcurrentHashMap<>();
 
     public CuentaRepositoryEnMemoria() {
-        guardar(new Cuenta(1L, "Juan Pérez", "juan.perez", new BigDecimal("15000.00")));
-        guardar(new Cuenta(2L, "María Gómez", "maria.gomez", new BigDecimal("8500.50")));
-        guardar(new Cuenta(3L, "Carlos Ruiz", "carlos.ruiz", new BigDecimal("3200.00")));
-        guardar(new Cuenta(4L, "Ana Torres", "ana.torres", new BigDecimal("50000.00")));
+        guardar(new Cuenta(1L, "Juan Pérez", "juan.perez", new BigDecimal("15000.00"), true));
+        guardar(new Cuenta(2L, "María Gómez", "maria.gomez", new BigDecimal("8500.50"), true));
+        guardar(new Cuenta(3L, "Carlos Ruiz", "carlos.ruiz", new BigDecimal("3200.00"), true));
+        guardar(new Cuenta(4L, "Ana Torres", "ana.torres", new BigDecimal("50000.00"), true));
     }
 
     @Override
@@ -28,7 +28,9 @@ public class CuentaRepositoryEnMemoria implements CuentaRepository {
         return Optional.ofNullable(cuentasPorAlias.get(alias));
     }
 
-    private void guardar(Cuenta cuenta) {
+    @Override
+    public Cuenta guardar(Cuenta cuenta) {
         cuentasPorAlias.put(cuenta.getAlias(), cuenta);
+        return cuenta;
     }
 }

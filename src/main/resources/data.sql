@@ -1,8 +1,8 @@
-INSERT INTO cuentas (id, titular, alias, saldo) VALUES
-                                                    (1, 'Juan Pérez',  'juan.perez',  15000.00),
-                                                    (2, 'María Gómez', 'maria.gomez',  8500.50),
-                                                    (3, 'Carlos Ruiz', 'carlos.ruiz',  3200.00),
-                                                    (4, 'Ana Torres',  'ana.torres',  50000.00);
+INSERT INTO cuentas (id, titular, alias, saldo, activa) VALUES
+                                                    (1, 'Juan Pérez',  'juan.perez',  15000.00, true),
+                                                    (2, 'María Gómez', 'maria.gomez',  8500.50, true),
+                                                    (3, 'Carlos Ruiz', 'carlos.ruiz',  3200.00, true),
+                                                    (4, 'Ana Torres',  'ana.torres',  50000.00, true);
 
 INSERT INTO movimientos
 (cuenta_origen_id, cuenta_destino_id, monto, tipo, fecha, descripcion)

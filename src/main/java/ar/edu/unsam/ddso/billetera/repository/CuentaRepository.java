@@ -6,4 +6,6 @@ import java.util.Optional;
 
 public interface CuentaRepository {
     Optional<Cuenta> findByAlias(String alias);
+
+    Cuenta guardar(Cuenta cuenta);
 }
